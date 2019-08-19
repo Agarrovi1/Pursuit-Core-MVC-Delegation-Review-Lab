@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D902CC2230B228000CAD2D5 /* FontSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D902CC1230B228000CAD2D5 /* FontSettingViewController.swift */; };
+		4D902CC4230B284900CAD2D5 /* FontChangingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D902CC3230B284900CAD2D5 /* FontChangingProtocol.swift */; };
 		CD8F8035230AE8E900CB87B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8F8034230AE8E900CB87B0 /* AppDelegate.swift */; };
 		CD8F8037230AE8E900CB87B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8F8036230AE8E900CB87B0 /* ViewController.swift */; };
 		CD8F803A230AE8E900CB87B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8F8038230AE8E900CB87B0 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		4D902CC1230B228000CAD2D5 /* FontSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSettingViewController.swift; sourceTree = "<group>"; };
+		4D902CC3230B284900CAD2D5 /* FontChangingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontChangingProtocol.swift; sourceTree = "<group>"; };
 		CD8F8031230AE8E900CB87B0 /* MVC+Delegation-Review-Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVC+Delegation-Review-Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8F8034230AE8E900CB87B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD8F8036230AE8E900CB87B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				CD8F8046230AEA9400CB87B0 /* Movie.swift */,
+				4D902CC3230B284900CAD2D5 /* FontChangingProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8F8037230AE8E900CB87B0 /* ViewController.swift in Sources */,
+				4D902CC4230B284900CAD2D5 /* FontChangingProtocol.swift in Sources */,
 				CD8F8035230AE8E900CB87B0 /* AppDelegate.swift in Sources */,
 				4D902CC2230B228000CAD2D5 /* FontSettingViewController.swift in Sources */,
 				CD8F8047230AEA9400CB87B0 /* Movie.swift in Sources */,

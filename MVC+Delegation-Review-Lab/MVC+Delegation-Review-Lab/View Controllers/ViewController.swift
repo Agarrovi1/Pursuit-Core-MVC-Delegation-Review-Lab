@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    let movies = Movie.allMovies
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -25,11 +27,15 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne", for: indexPath)
+        let theMovie = movies[indexPath.row]
+        cell.textLabel?.text = theMovie.name
+        cell.detailTextLabel?.text = theMovie.year.description
+        return cell
     }
     
     
