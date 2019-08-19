@@ -9,7 +9,12 @@
 import UIKit
 
 class FontSettingViewController: UIViewController {
-
+    @IBOutlet weak var fontSizeLabel: UILabel!
+    
+    @IBAction func slidingSlider(_ sender: UISlider) {
+    }
+    @IBAction func steppingStepper(_ sender: UIStepper) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
