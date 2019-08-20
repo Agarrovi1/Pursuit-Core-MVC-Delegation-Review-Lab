@@ -44,6 +44,9 @@ class MainViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 }
 
 extension MainViewController: UITableViewDelegate {
@@ -72,6 +75,4 @@ extension MainViewController: FontSettings {
     func fontDidChange(to font: Double) {
         changeFont(to: font)
     }
-    
-    
 }

@@ -18,6 +18,7 @@ class FontSettingViewController: UIViewController {
     @IBAction func slidingSlider(_ sender: UISlider) {
         fontStepper.value = Double(sender.value)
         fontSizeLabel.text = "Preview Font Size: \(fontSlider.value)"
+        //sender.value = roundf(sender.value * 2.0) / 2
         self.delegate?.fontDidChange(to: Double(sender.value))
     }
     @IBAction func steppingStepper(_ sender: UIStepper) {
