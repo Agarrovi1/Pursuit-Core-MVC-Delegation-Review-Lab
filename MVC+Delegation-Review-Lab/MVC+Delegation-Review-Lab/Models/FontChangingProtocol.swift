@@ -8,6 +8,5 @@
 
 import Foundation
 protocol FontSettings {
-    //var newFontSize: Double { get }
     func fontDidChange(to font: Double)
 }

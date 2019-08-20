@@ -18,19 +18,21 @@ class FontSettingViewController: UIViewController {
     @IBAction func slidingSlider(_ sender: UISlider) {
         fontStepper.value = Double(sender.value)
         fontSizeLabel.text = "Preview Font Size: \(fontSlider.value)"
+        self.delegate?.fontDidChange(to: Double(sender.value))
     }
     @IBAction func steppingStepper(_ sender: UIStepper) {
         fontSlider.value = Float(sender.value)
         fontSizeLabel.text = "Preview Font Size: \(fontStepper.value)"
+        self.delegate?.fontDidChange(to: sender.value)
     }
     
     var delegate: FontSettings?
     override func viewDidLoad() {
         super.viewDidLoad()
-        fontSizeLabel.text = "Preview Font Size: \(fontSlider.value)"
         guard let defaultSliderValue = newSliderValue, let defaultStepperValue = newStepperValue else {return}
         self.fontSlider.value = defaultSliderValue
         self.fontStepper.value = defaultStepperValue
+        fontSizeLabel.text = "Preview Font Size: \(fontSlider.value)"
         // Do any additional setup after loading the view.
     }
 

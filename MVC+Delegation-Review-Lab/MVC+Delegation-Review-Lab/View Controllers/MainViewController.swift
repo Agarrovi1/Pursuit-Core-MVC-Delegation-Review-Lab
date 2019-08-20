@@ -41,11 +41,14 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
         // Do any additional setup after loading the view.
     }
 }
 
 extension MainViewController: UITableViewDelegate {
+    
+
 }
 
 extension MainViewController: UITableViewDataSource {
@@ -59,6 +62,9 @@ extension MainViewController: UITableViewDataSource {
         cell.textLabel?.text = theMovie.name
         cell.detailTextLabel?.text = theMovie.year.description
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
