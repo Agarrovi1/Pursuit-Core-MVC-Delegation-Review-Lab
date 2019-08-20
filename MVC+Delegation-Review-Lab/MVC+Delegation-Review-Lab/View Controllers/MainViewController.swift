@@ -17,19 +17,19 @@ class MainViewController: UIViewController {
         let subtitleFont = CGFloat(font - 5)
         let cells = tableView.visibleCells
         for aCell in cells {
-            aCell.textLabel?.font = UIFont.systemFont(ofSize: fontCGFloat)
-            aCell.detailTextLabel?.font = UIFont.systemFont(ofSize: subtitleFont)
+            guard let aCell = aCell as? CellOneTableViewCell else {return}
+            aCell.titleLabel.font = UIFont.systemFont(ofSize: fontCGFloat)
+            aCell.subtitleLabel.font = UIFont.systemFont(ofSize: subtitleFont)
+            aCell.titleLabel.sizeToFit()
+            aCell.titleLabel.sizeToFit()
         }
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne") else {return}
-//        cell.textLabel?.font = UIFont.systemFont(ofSize: fontCGFloat)
-//        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: subtitleFont)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? FontSettingViewController else {return}
         let cells = tableView.visibleCells
-        guard let fontSize = cells[0].textLabel?.font.pointSize else {return}
+        guard let cell = cells[0] as? CellOneTableViewCell else {return}
+        let fontSize = cell.titleLabel.font.pointSize
         let sizeAsDouble = Double(fontSize)
         let sizeAsFloat = Float(fontSize)
         destination.newSliderValue = sizeAsFloat
@@ -57,10 +57,10 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne") as? CellOneTableViewCell else {return UITableViewCell()}
         let theMovie = movies[indexPath.row]
-        cell.textLabel?.text = theMovie.name
-        cell.detailTextLabel?.text = theMovie.year.description
+        cell.titleLabel.text = theMovie.name
+        cell.subtitleLabel.text = theMovie.year.description
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
